@@ -2,18 +2,18 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Site title and description
-export const SITE_TAB = "Frosti";
-export const SITE_TITLE = "Frosti 🧊";
+export const SITE_TAB = "Tanguy Frageul";
+export const SITE_TITLE = "Tanguy Frageul's portoflio";
 export const SITE_DESCRIPTION = "A blog template";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
 export const USER_NAME = "Tanguy Frageul";
 export const USER_SITE = "https://tanguy-fgl.github.io"
-export const USER_AVATAR = "/profile.webp";
+export const USER_AVATAR = "https://avatars.githubusercontent.com/u/44116544";
 
 // Server and transition settings
-export const SERVER_URL = "https://demo.saroprock.com";
+export const SERVER_URL = "https://tanguy-fgl.github.io";
 
 // Menu items for navigation
 export const menuItems = [
@@ -66,7 +66,7 @@ export const menuItems = [
   {
     id: "contact",
     text: "Contact",
-    href: "mailto:contact.evesunmaple@outlook.com", // Contact email
+    href: "mailto:tanguy@beestech.fr", // Contact email
     target: "_blank", // Open in a new tab
     svg: "contact",
   },
@@ -75,22 +75,22 @@ export const menuItems = [
 // Social media and contact icons
 export const socialIcons = [
   {
-    href: "https://afdian.net/a/saroprock",
+    href: "https://paypal.me/tanguyfgl",
     ariaLabel: "Support my work",
     title: "Support my work",
     svg: "support",
   },
   {
-    href: "https://github.com/EveSunMaple",
+    href: "https://github.com/tanguy-fgl",
     ariaLabel: "Github",
     title: "Github",
     svg: "github",
   },
   {
-    href: "https://space.bilibili.com/438392347",
-    ariaLabel: "BiliBili",
-    title: "BiliBili",
-    svg: "bilibili",
+    href: "https://linkedin.com/in/tanguy-frageul",
+    ariaLabel: "LinkedIn",
+    title: "LinkedIn",
+    svg: "linkedin",
   },
   {
     href: "/rss.xml",
