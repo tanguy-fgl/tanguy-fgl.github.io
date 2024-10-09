@@ -22,7 +22,6 @@ const { USER_SITE } = await import('./src/consts.ts');
 // https://astro.build/config
 export default defineConfig({
   site: USER_SITE,
-  base: 'portfolio',
   output: 'static',
   style: {
     scss: {
