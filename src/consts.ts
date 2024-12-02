@@ -4,7 +4,7 @@
 // Site title and description
 export const SITE_TAB = "Tanguy Frageul";
 export const SITE_TITLE = "Tanguy Frageul's portoflio";
-export const SITE_DESCRIPTION = "A blog template";
+export const SITE_DESCRIPTION = "Discover Tanguy Frageul's portfolio: innovative web development projects built with Node.js, HTML, CSS, PHP, SQL, and more. Creative solutions and technical expertise to bring ideas to life.";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
