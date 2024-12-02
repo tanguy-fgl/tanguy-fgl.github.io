@@ -475,3 +475,93 @@
 - 修复了一堆拼写错误（存在于 2.6.0 的 release 中）
 - 删除了在 LinkCard 中不恰当的图片放大功能
 - 移除了 `transition.scss` ，改用 swup 默认主题代替（我不知道这对改善崩溃问题是否有用）
+
+## [2.7.0] - 2024-10-12
+
+### Features
+
+- 添加昼夜转换过渡
+- 自定义了博客中的标题 `ID` ，当前命名格式为 `heading-${headingCount}` ，避免了出现同名标题无法跳转的问题
+- 为博客目录功能添加了 "聚焦" 功能，现在目录会根据您当前阅读的部分自动滚动
+- 为博客 `main` 中的卡片添加了逐次进入样式，使用 `sass` 制作：
+
+    ```scss
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 0.5s ease forwards;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.1}s;
+        }
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    ```
+
+### Refactored
+
+- 修改了原网站图标
+- 修改了原不规范的文件命名
+- 修改了原不合理的布局
+- 修改了侧边栏按钮的样式，使用 `join` 组合元素
+- 微调 `padding`
+
+### Fix
+
+- 修复了在重名 `ID` 下无法跳转的问题
+
+## [2.7.1] - 2024-10-19
+
+### Refactored
+
+- 有关事件监听的部分更改
+
+### Fix
+
+- 修复了滚动问题
+- 修复了在站内跳转时目录中 `active` 保留的问题
+
+## [2.8.0-rc] - 2024-11-3
+
+### Features
+
+- 学习了 Astro 中自定义元素的用法，现在两个交互按钮单独分为 widget 可以重用
+- 在 `consts.ts` 新增了 `SITE_LANG` 作为网站的语言配置
+- 在 `consts.ts` 新增了 `DAIYSUI_THEME` 作为 DaiysUI 的主题配置，详见 https://daisyui.com/docs/themes/ （此内容需要更多适配）
+- 在 `consts.ts` 新增了 `CODE_THEME` 作为 shiki 的主题配置
+
+#### preview
+
+### Refactored
+
+- 侧边栏与导航栏修改
+- 移除了不必要的工具
+- 修改了 active 样式（选择性）
+
+### Fix
+
+- 修复了控制台报错
+- 补上了 `ProjectCard` 缺失的颜色过渡
+
+## [2.8.0] - 2024-11-9
+
+### Features
+
+- 为 Navbar 添加了操作：下滑页面收起，上滑放下
+- 重做了代码复制按钮，减少客户端代码，具体样式详见演示
+
+### Refactored
+
+- 整体页面调整（之前一直觉得 “贴屏幕贴得太近了” 这种感觉，现在好很多）包括宽度与字号
+
+### Fix
+
+- 修复了若干问题
