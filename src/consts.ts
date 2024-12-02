@@ -18,7 +18,21 @@ export const SERVER_URL = "https://tanguy-fgl.github.io";
 // Menu items for navigation
 export const menuItems = [
   { id: "home", text: "Home", href: "/", svg: "home", target: "_self" }, // Home page
-  { id: "about", text: "About", href: "/about", svg: "about", target: "_self" }, // About page
+  {
+    id: "project",
+    text: "Project",
+    href: "/project",
+    svg: "project",
+    target: "_self",
+  }, // Projects page
+  
+  {
+    id: "friend",
+    text: "Friend",
+    href: "/friend",
+    svg: "friend",
+    target: "_self",
+  }, // Friends page
   {
     id: "blog",
     text: "Blogs",
@@ -49,27 +63,16 @@ export const menuItems = [
       }, // Life category
     ],
   }, // Blog page with sub-items
-  {
-    id: "project",
-    text: "Project",
-    href: "/project",
-    svg: "project",
-    target: "_self",
-  }, // Projects page
-  {
-    id: "friend",
-    text: "Friend",
-    href: "/friend",
-    svg: "friend",
-    target: "_self",
-  }, // Friends page
+  
+  
   {
     id: "contact",
     text: "Contact",
-    href: "mailto:tanguy@beestech.fr", // Contact email
+    href: "mailto:tanguyfrageul@gmail.com", // Contact email
     target: "_blank", // Open in a new tab
     svg: "contact",
   },
+  { id: "about", text: "About", href: "/about", svg: "about", target: "_self" }, // About page
 ];
 
 // Social media and contact icons
