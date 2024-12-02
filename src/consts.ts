@@ -2,6 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Site title and description
+export const SITE_LANG = "en";
 export const SITE_TAB = "Tanguy Frageul";
 export const SITE_TITLE = "Tanguy Frageul's portoflio";
 export const SITE_DESCRIPTION = "Discover Tanguy Frageul's portfolio: innovative web development projects built with Node.js, HTML, CSS, PHP, SQL, and more. Creative solutions and technical expertise to bring ideas to life.";
@@ -9,11 +10,23 @@ export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
 export const USER_NAME = "Tanguy Frageul";
-export const USER_SITE = "https://tanguy-fgl.github.io"
+export const USER_SITE = "https://tanguy-fgl.github.io";
 export const USER_AVATAR = "https://avatars.githubusercontent.com/u/44116544";
 
 // Server and transition settings
 export const SERVER_URL = "https://tanguy-fgl.github.io";
+
+// Theme settings
+export const DAISYUI_THEME = {
+  light: "winter",
+  dark: "dracula",
+};
+
+export const CODE_THEME = {
+  light: "github-light",
+  dark: "github-dark",
+};
+
 
 // Menu items for navigation
 export const menuItems = [
