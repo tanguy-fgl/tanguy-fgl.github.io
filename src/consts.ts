@@ -20,12 +20,12 @@ export const SERVER_URL = "https://tanguy-fgl.github.io";
 export const DAISYUI_THEME = {
   light: "winter",
   dark: "dracula",
-};
+}
 
 export const CODE_THEME = {
   light: "github-light",
   dark: "github-dark",
-};
+}
 
 
 // Menu items for navigation
