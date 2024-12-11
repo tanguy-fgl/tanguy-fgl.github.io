@@ -10,7 +10,6 @@ import Warning from "../components/blog/warning.astro";
 import TimeLine from "../components/page/TimeLine.astro";
 import LinkCard from "../components/page/LinkCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import ProjectJS from "../components/ProjectJS.astro";
 
 <BaseLayout title="Project">
   <BaseCard title="Project">
@@ -19,15 +18,12 @@ import ProjectJS from "../components/ProjectJS.astro";
 ---
 
   </BaseCard>
-  <div class="mt-8 mb-8">
-    <ProjectCard
-      title="Tetris"
-      image="https://repository-images.githubusercontent.com/895003286/93b5b8da-9f4d-4f23-99f4-7991127052a7"
-      desc="A reproduction of Tetris written in C++ using the SFML library"
-      url="https://github.com/tanguy-fgl/Tetris"
-      badge="C++"
-      target="_self"
-    />
-  </div>
+  <ProjectCard
+    title="Tetris"
+    image="https://repository-images.githubusercontent.com/895003286/93b5b8da-9f4d-4f23-99f4-7991127052a7"
+    desc="A reproduction of Tetris written in C++ using the SFML library"
+    url="https://github.com/tanguy-fgl/Tetris"
+    badge="C++"
+    target="_self"
+  />
 </BaseLayout>
-<ProjectJS />

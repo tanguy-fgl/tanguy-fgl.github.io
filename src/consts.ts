@@ -30,12 +30,12 @@ export const CODE_THEME = {
 
 // Menu items for navigation
 export const menuItems = [
-  { id: "home", text: "Home", href: "/", svg: "home", target: "_self" }, // Home page
+  { id: "home", text: "Home", href: "/", svg: "material-symbols:home-outline-rounded", target: "_self" }, // Home page
   {
     id: "project",
     text: "Project",
     href: "/project",
-    svg: "project",
+    svg: "material-symbols:code-blocks-outline",
     target: "_self",
   }, // Projects page
   
@@ -43,35 +43,35 @@ export const menuItems = [
     id: "friend",
     text: "Friend",
     href: "/friend",
-    svg: "friend",
+    svg: "material-symbols:supervisor-account-outline-rounded",
     target: "_self",
   }, // Friends page
   {
     id: "blog",
     text: "Blogs",
     href: "/blog",
-    svg: "blog",
+    svg: "material-symbols:book-2-outline-rounded",
     target: "_self",
     subItems: [
       {
         id: "all",
         text: "All blogs",
         href: "/blog",
-        svg: "post",
+        svg: "material-symbols:ink-pen-outline-rounded",
         target: "_self",
       }, // All blog
       {
         id: "tech",
         text: "Tech blogs",
         href: "/blog/categories/tech",
-        svg: "cube",
+        svg: "material-symbols:deployed-code-outline",
         target: "_self",
       }, // Technology category
       {
         id: "life",
         text: "Life blogs",
         href: "/blog/categories/life",
-        svg: "heart",
+        svg: "material-symbols:earthquake-rounded",
         target: "_self",
       }, // Life category
     ],
@@ -83,9 +83,9 @@ export const menuItems = [
     text: "Contact",
     href: "mailto:tanguyfrageul@gmail.com", // Contact email
     target: "_blank", // Open in a new tab
-    svg: "contact",
+    svg: "material-symbols:attach-email-outline-rounded",
   },
-  { id: "about", text: "About", href: "/about", svg: "about", target: "_self" }, // About page
+  { id: "about", text: "About", href: "/about", svg: "material-symbols:info-outline-rounded", target: "_self" }, // About page
 ];
 
 // Social media and contact icons
@@ -94,24 +94,24 @@ export const socialIcons = [
     href: "https://paypal.me/tanguyfgl",
     ariaLabel: "Support my work",
     title: "Support my work",
-    svg: "support",
+    svg: "ri:paypal-line",
   },
   {
     href: "https://github.com/tanguy-fgl",
     ariaLabel: "Github",
     title: "Github",
-    svg: "github",
+    svg: "ri:github-line",
   },
   {
     href: "https://linkedin.com/in/tanguy-frageul",
     ariaLabel: "LinkedIn",
     title: "LinkedIn",
-    svg: "linkedin",
+    svg: "ri:linkedin-box-line",
   },
   {
     href: "/rss.xml",
     ariaLabel: "RSS Feed",
     title: "RSS Feed",
-    svg: "rss",
+    svg: "ri:rss-line",
   },
 ];

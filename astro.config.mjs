@@ -16,6 +16,7 @@ import astroI18next from "astro-i18next";
 
 import { transformers } from './src/config/transformers.js';
 
+import { rehypeFadeInUp } from './src/plugins/rehype-fade-in-up.mjs';
 import { remarkAddAnchor } from './src/plugins/remark-add-anchor.mjs';
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
 
@@ -30,7 +31,13 @@ export default defineConfig({
       includePaths: ["./src/styles"],
     },
   },
-  integrations: [mdx(), icon(), swup({
+  integrations: [mdx(),
+    icon({
+      include: {
+        mdi: ["*"], // (Default) Loads entire Material Design Icon set
+      },
+    }),
+    swup({
     cache: true,
     progress: true,
     accessibility: true,
@@ -54,7 +61,7 @@ export default defineConfig({
       transformers: transformers
     },
     remarkPlugins: [remarkMath, remarkAddAnchor, remarkReadingTime],
-    rehypePlugins: [rehypeKatex,
+    rehypePlugins: [rehypeKatex, rehypeFadeInUp,
       [
         rehypeExternalLinks,
         {
@@ -122,5 +129,14 @@ export default defineConfig({
           }
         }
       ]],
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
   },
 });
