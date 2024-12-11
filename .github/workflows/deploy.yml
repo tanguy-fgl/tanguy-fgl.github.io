@@ -19,7 +19,7 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
-          package-manager: pnpm@latest
+          package-manager: pnpm@9.14.4
           install-command: pnpm install --no-frozen-lockfile # Désactiver frozen-lockfile
 
   deploy:
