@@ -31,17 +31,17 @@ export const CODE_THEME = {
 export const menuItems = [
   { id: "home", text: "Home", href: "/", svg: "material-symbols:home-outline-rounded", target: "_self" }, // Home page
   {
-    id: "project",
-    text: "Project",
-    href: "/project",
+    id: "projects",
+    text: "Projects",
+    href: "/projects",
     svg: "material-symbols:code-blocks-outline",
     target: "_self",
   }, // Projects page
 
   {
-    id: "friend",
-    text: "Friend",
-    href: "/friend",
+    id: "friends",
+    text: "Friends",
+    href: "/friends",
     svg: "material-symbols:supervisor-account-outline-rounded",
     target: "_self",
   }, // Friends page
