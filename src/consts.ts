@@ -10,7 +10,7 @@ export const DATE_FORMAT = "ddd MMM DD YYYY";
 
 // User profile information
 export const USER_NAME = "Tanguy Frageul";
-export const USER_SITE = "https://tanguy-fgl.github.io";
+export const USER_SITE = "https://tanguy-fgl.github.io"; // At the same time, this is also the site retrieved by the i18n configuration.
 export const USER_AVATAR = "https://avatars.githubusercontent.com/u/44116544";
 
 // Server and transition settings
@@ -20,13 +20,12 @@ export const SERVER_URL = "https://tanguy-fgl.github.io";
 export const DAISYUI_THEME = {
   light: "winter",
   dark: "dracula",
-}
+};
 
 export const CODE_THEME = {
   light: "github-light",
   dark: "github-dark",
-}
-
+};
 
 // Menu items for navigation
 export const menuItems = [
@@ -38,7 +37,7 @@ export const menuItems = [
     svg: "material-symbols:code-blocks-outline",
     target: "_self",
   }, // Projects page
-  
+
   {
     id: "friend",
     text: "Friend",
@@ -76,8 +75,7 @@ export const menuItems = [
       }, // Life category
     ],
   }, // Blog page with sub-items
-  
-  
+
   {
     id: "contact",
     text: "Contact",

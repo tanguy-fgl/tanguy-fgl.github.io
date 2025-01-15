@@ -11,6 +11,17 @@
     "nextPage": "Older posts",
     "wordCount": "words",
     "readTime": "minutes",
-    "share": "Share"
+    "share": "Share",
+    "shareCard": "Share this article",
+    "close": "Close"
+  },
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "friends": "Friends",
+    "blogs": "Blogs",
+    "contact": "Contact",
+    "about": "About"
   }
+
 }

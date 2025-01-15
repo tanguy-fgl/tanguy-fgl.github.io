@@ -3,8 +3,8 @@
 interface ImportMetaEnv {
     readonly NOTION_API_KEY: string;
     readonly NOTION_SHUOSHUO_PAGE_ID: string;
-}
-
-interface ImportMeta {
+  }
+  
+  interface ImportMeta {
     readonly env: ImportMetaEnv;
-}
+  }

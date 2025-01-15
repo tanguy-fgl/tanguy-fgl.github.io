@@ -1,0 +1,27 @@
+{
+  "label": {
+    "noTag": "Aucuns tags assignés",
+    "tagCard": "Tags",
+    "tagPage": "Tag",
+    "noCategory": "Aucunes catégories assignées",
+    "categoryCard": "Catégories",
+    "categoryPage": "Catégorie",
+    "link": "Lien: ",
+    "prevPage": "Articles récents",
+    "nextPage": "Anciens articles",
+    "wordCount": "mots",
+    "readTime": "minutes",
+    "share": "Partager",
+    "shareCard": "Partager cet article",
+    "close": "Fermer"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "friends": "Amis",
+    "blogs": "Blogs",
+    "contact": "Contact",
+    "about": "À propos"
+  }
+
+}
