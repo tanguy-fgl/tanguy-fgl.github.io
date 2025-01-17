@@ -20,6 +20,8 @@
     "projects": "Projects",
     "friends": "Friends",
     "blogs": "Blogs",
+    "blogs.all": "All Blogs",
+    "blogs.tech": "Tech Blog",
     "contact": "Contact",
     "about": "About"
   }

@@ -1,6 +1,6 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
-
+import { t } from "i18next";
 // Site title and description
 export const SITE_LANG = "en";
 export const SITE_TAB = "Tanguy Frageul";
@@ -29,10 +29,10 @@ export const CODE_THEME = {
 
 // Menu items for navigation
 export const menuItems = [
-  { id: "home", text: "Home", href: "/", svg: "material-symbols:home-outline-rounded", target: "_self" }, // Home page
+  { id: "home", text: t("navbar.home"), href: "/", svg: "material-symbols:home-outline-rounded", target: "_self" }, // Home page
   {
     id: "projects",
-    text: "Projects",
+    text: t("navbar.projects"),
     href: "/projects",
     svg: "material-symbols:code-blocks-outline",
     target: "_self",
@@ -40,14 +40,14 @@ export const menuItems = [
 
   {
     id: "friends",
-    text: "Friends",
+    text: t("navbar.friends"),
     href: "/friends",
     svg: "material-symbols:supervisor-account-outline-rounded",
     target: "_self",
   }, // Friends page
   {
     id: "blog",
-    text: "Blogs",
+    text: t("navbar.blogs"),
     href: "/blog",
     svg: "material-symbols:book-2-outline-rounded",
     target: "_self",
@@ -78,12 +78,12 @@ export const menuItems = [
 
   {
     id: "contact",
-    text: "Contact",
+    text: t("navbar.contact"),
     href: "mailto:tanguyfrageul@gmail.com", // Contact email
     target: "_blank", // Open in a new tab
     svg: "material-symbols:attach-email-outline-rounded",
   },
-  { id: "about", text: "About", href: "/about", svg: "material-symbols:info-outline-rounded", target: "_self" }, // About page
+  { id: "about", text: t("navbar.about"), href: "/about", svg: "material-symbols:info-outline-rounded", target: "_self" }, // About page
 ];
 
 // Social media and contact icons
