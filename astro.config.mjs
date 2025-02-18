@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import playformCompress from "@playform/compress";
@@ -8,16 +9,17 @@ import icon from "astro-icon";
 import pagefind from "astro-pagefind";
 import { defineConfig } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
-import rehypeKatex from "rehype-katex";
 
+import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+
 import { transformers } from "./src/config/transformers.js";
 
 import { CODE_THEME, USER_SITE } from "./src/consts.ts";
-
 import { initI18n } from "./src/locales";
 import { rehypeFadeInUp } from "./src/plugins/rehype-fade-in-up.mjs";
 import { remarkAddAnchor } from "./src/plugins/remark-add-anchor.mjs";
+
 import { remarkHeadingExtractor } from "./src/plugins/remark-heading-extractor.mjs";
 
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
@@ -25,7 +27,10 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   site: USER_SITE,
+  mode: "production",
   output: "server",
+  adapter: node({ mode: "middleware" }),
+
   style: {
     scss: {
       includePaths: ["./src/styles"],
