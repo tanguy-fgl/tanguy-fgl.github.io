@@ -24,6 +24,13 @@
     "blogs.tech": "Blog Tech",
     "contact": "Contact",
     "about": "À propos"
+  },
+  "homepage": {
+    "hiThere": "Bonjour !",
+    "welcome": "Bienvenue sur le Portfolio de Tanguy Frageul",
+    "desc1": "Découvrez une collection soigneusement sélectionnée de projets mettant en valeur mon expertise en développement web, en programmation et en résolution de problèmes. Avec une solide maîtrise des technologies telles que Node.js, HTML, CSS, PHP et SQL, je donne vie à des solutions innovantes en combinant compétences techniques et créativité.",
+    "desc2": "Au-delà du codage, je m'enorgueillis de favoriser la collaboration, de prêter attention aux détails et de fournir des résultats qui dépassent les attentes. Que ce soit pour construire des sites web dynamiques, concevoir des bases de données efficaces ou encadrer des équipes dans un environnement professionnel, mon travail reflète dévouement, adaptabilité et passion pour l'apprentissage.",
+    "desc3": "Construisons ensemble quelque chose de formidable !"
   }
 
 }

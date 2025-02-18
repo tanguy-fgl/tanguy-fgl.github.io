@@ -12,9 +12,9 @@ export function initI18n() {
     .use(LanguageDetector)
     .init({
       fallbackLng: "en",
-      supportedLngs: ["zh", "en", "fr"],
+      supportedLngs: ["en", "fr"],
       detection: {
-        order: ["querystring", "cookie", "localStorage", "navigator"],
+        order: ["navigator", "querystring", "cookie", "localStorage"],
         caches: ["cookie"],
       },
       backend: {
