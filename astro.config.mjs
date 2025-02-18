@@ -28,8 +28,7 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 export default defineConfig({
   site: USER_SITE,
   mode: "production",
-  output: "server",
-  adapter: node({ mode: "middleware" }),
+  output: "static",
 
   style: {
     scss: {
