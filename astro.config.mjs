@@ -15,7 +15,7 @@ import remarkMath from "remark-math";
 import { transformers } from "./src/config/transformers.js";
 
 import { CODE_THEME, USER_SITE } from "./src/consts.ts";
-import { initI18n } from "./src/locales";
+import { initI18n } from "./src/locales.ts";
 import { rehypeFadeInUp } from "./src/plugins/rehype-fade-in-up.mjs";
 import { remarkAddAnchor } from "./src/plugins/remark-add-anchor.mjs";
 
