@@ -1,0 +1,93 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+import GitHubStats from "@/components/mdx/GitHubStats.astro";
+import RepositoryCard from "@/components/mdx/RepositoryCard.astro";
+---
+
+<BaseLayout title="Projets">
+  <MainCard
+    title="Mes projets"
+    description="Une vitrine de mes projets open source et de mes contributions sur GitHub"
+    textOverlay="PROJETS"
+    infoIcon="lucide:code-2"
+  >
+    <!-- Featured Projects -->
+    <section class="py-4">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <Icon name="lucide:star" class="w-6 h-6 text-primary" />
+        <span>Projet mis en avant</span>
+      </h2>
+
+      <GitHubStats username="tanguy-fgl" repositoryName="WinXecure" showLanguages={true} showContributors={true} />
+    </section>
+
+    <!-- My Repositories -->
+    <section class="py-4">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <Icon name="lucide:folder" class="w-6 h-6 text-primary" />
+        <span>Mes repos Github</span>
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <RepositoryCard repo="tanguy-fgl/pcdesc" isPinned={true} />
+        <RepositoryCard repo="tanguy-fgl/Tetris" isPinned={true} />
+      </div>
+
+      <div class="flex justify-center mt-10">
+        <a
+          href="https://github.com/tanguy-fgl?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline gap-2"
+        >
+          <Icon name="lucide:github" class="w-5 h-5" />
+          <span>Voir plus sur Github</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Open Source Contributions -->
+    <section class="py-4">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <Icon name="lucide:git-pull-request" class="w-6 h-6 text-primary" />
+        <span>Contributions Open Source</span>
+      </h2>
+
+      <div class="card bg-base-200 p-6">
+        <ul class="space-y-6">
+          {
+            [
+              {
+                project: "Theme Guide for MineWeb",
+                description: "Un thème pour le CMS MineWeb",
+                url: "https://github.com/MineWeb/Theme-Guide",
+              },
+            ].map((contrib) => (
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 bg-base-300 p-2 rounded-full">
+                  <Icon name="lucide:git-commit" class="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold">
+                    <a
+                      href={contrib.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:text-primary transition-colors flex items-center gap-1"
+                    >
+                      {contrib.project}
+                      <Icon name="lucide:external-link" class="w-4 h-4" />
+                    </a>
+                  </h3>
+                  <p class="text-base-content/80">{contrib.description}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </MainCard>
+</BaseLayout>

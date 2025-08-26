@@ -1,0 +1,238 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+import FeatureCard from "@/components/mdx/FeatureCard.astro";
+import GitHubStats from "@/components/mdx/GitHubStats.astro";
+---
+
+<BaseLayout title="Accueil">
+  <MainCard
+    title="Bienvenue sur mon portfolio !"
+    description="Découvrez mon blog, mes projets et plus encore."
+    textOverlay="ACCUEIL"
+    infoIcon="lucide:info"
+  >
+    <div class="space-y-8">
+      <!-- Hero Section -->
+      <section class="py-6">
+        <div class="flex flex-col items-center text-center">
+          <h1
+            class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-loose"
+          >
+            Tanguy Frageul
+          </h1>
+          <p class="text-xl text-base-content/80 max-w-3xl mb-8"></p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/blog" class="btn btn-primary gap-2 btn-shine-effect">
+              <Icon name="lucide:book-open" class="w-5 h-5" />
+              <span>Découvrir mon blog</span>
+            </a>
+            <a href="https://github.com/tanguy-fgl/" target="_blank" class="btn btn-outline gap-2">
+              <Icon name="lucide:github" class="w-5 h-5" />
+              <span>Voir mon GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Icon name="lucide:sparkles" class="w-6 h-6 text-primary" />
+          <span>Mes points forts</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <FeatureCard
+            title="Sécurité"
+            description="Toujours à l'écoute des dernières vulnérabilités et mises à jour de sécurité."
+            icon="lucide:lock-keyhole"
+            color="oklch(0.7 0.2 30)"
+          />
+
+          <FeatureCard
+            title="Serveur"
+            description="Mise en place de serveurs sécurisés et performants pour vos applications."
+            icon="lucide:server"
+            color="oklch(0.65 0.2 280)"
+          />
+
+          <FeatureCard
+            title="Côté client"
+            description="Mise en œuvre de solutions adaptées aux besoins de vos utilisateurs."
+            icon="lucide:circle-user-round"
+            color="oklch(0.6 0.2 160)"
+          />
+
+          <FeatureCard
+            title="Site web"
+            description="Mise en place de sites web accessibles, sécurisés et performants pour tous."
+            icon="lucide:globe"
+            color="oklch(0.6 0.2 200)"
+          />
+
+          <FeatureCard
+            title="Performance"
+            description="Optimisation des performances pour une expérience utilisateur fluide et rapide."
+            icon="lucide:zap"
+            color="oklch(0.8 0.2 80)"
+          />
+
+          <FeatureCard
+            title="Création au cas par cas"
+            description="Solutions personnalisées pour répondre à vos besoins spécifiques."
+            icon="lucide:palette"
+            color="oklch(0.7 0.2 10)"
+          />
+        </div>
+      </section>
+
+      <!-- Quick Start -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Icon name="lucide:rocket" class="w-6 h-6 text-primary" />
+          <span>Commencer avec moi</span>
+        </h2>
+
+        <div class="card bg-base-200 p-6">
+          <h3 class="text-xl font-bold mb-4">Les différentes étapes lors de la création de projet</h3>
+
+          <ol class="space-y-6 mb-6">
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  1
+                </div>
+                <h4 class="font-bold">Étude des besoins</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  Lors d’un premier entretien, nous définirons précisément vos besoins réels en matière de
+                  cybersécurité. L’objectif est de ne mettre en place que les services strictement nécessaires, car
+                  chaque fonctionnalité inutile représente une surface d’attaque supplémentaire.
+                </p>
+              </div>
+            </li>
+
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  2
+                </div>
+                <h4 class="font-bold">Analyse de l'existant</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  Un audit complet de votre infrastructure, de vos systèmes et de vos procédures sera réalisé. Cette
+                  étape permet d’identifier les vulnérabilités, les mauvaises configurations, ainsi que les potentielles
+                  failles organisationnelles.
+                </p>
+              </div>
+            </li>
+
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  3
+                </div>
+                <h4 class="font-bold">Élaboration de la stratégie de sécurité</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  Sur la base de l’analyse, je conçois une stratégie sur mesure, adaptée à vos besoins, à votre budget
+                  et à votre niveau de sensibilité aux risques. Cette stratégie inclut les mesures préventives,
+                  correctives et de surveillance à mettre en place.
+                </p>
+              </div>
+            </li>
+
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  4
+                </div>
+                <h4 class="font-bold">Mise en œuvre des solutions</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  Installation, configuration et sécurisation des outils choisis : pare-feu, solutions antivirus/EDR,
+                  politiques d’accès, durcissement des systèmes, chiffrement des données, etc. Chaque mesure est
+                  documentée pour garantir une gestion claire.
+                </p>
+              </div>
+            </li>
+
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  5
+                </div>
+                <h4 class="font-bold">Tests et validation</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  Réalisation de tests de pénétration, simulations d’attaques et vérifications de conformité afin de
+                  s’assurer que les défenses mises en place sont efficaces et robustes face aux menaces actuelles.
+                </p>
+              </div>
+            </li>
+
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  6
+                </div>
+                <h4 class="font-bold">Formation et sensibilisation</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  La sécurité dépend aussi des utilisateurs. Je forme vos équipes aux bonnes pratiques, à la détection
+                  des tentatives de phishing et à la réaction en cas d’incident. Un personnel sensibilisé est la
+                  meilleure ligne de défense.
+                </p>
+              </div>
+            </li>
+
+            <li class="relative flex flex-col gap-4 items-start">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
+                >
+                  7
+                </div>
+                <h4 class="font-bold">Suivi et maintenance</h4>
+              </div>
+              <div class="relative w-full">
+                <p class="text-base-content/70 mb-2">
+                  Mise en place d’un suivi régulier et d’une veille cybersécurité afin de détecter rapidement toute
+                  anomalie et de maintenir votre niveau de protection à jour face aux nouvelles menaces.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="alert bg-primary/10 text-primary mb-0">
+            <Icon name="lucide:lightbulb" class="w-6 h-6" />
+            <span
+              >Découvrez mon <a href="/blog" class="underline">blog</a> pour plus d'informations en matière de cybsécurité
+              et les actualités tech.</span
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+  </MainCard>
+</BaseLayout>

@@ -1,0 +1,69 @@
+# 网站的基本信息
+site:
+  tab: Tanguy Frageul # 浏览器标签栏上显示的文本
+  title: Tanguy Frageul - Étudiant en cybersécurité
+  description: "Blog et portfolio en cybersécurité : articles, tutoriels, audits et projets (pentest, CTF). Découvrez mon travail, mon CV et mes prestations."
+  language: fr # 网站的语言，例如 "en" 是英文
+  favicon: /favicon.ico # 网站的图标，用于浏览器标签栏和其他地方显示
+  theme: # 更多主题 https://daisyui.com/docs/themes/
+    light: winter # 主题的浅色模式
+    dark: night # 主题的深色模式
+    code: github-dark # 代码块的主题 https://shiki.style/themes
+  date_format: ddd MMM DD YYYY # 日期格式设置，支持自定义格式
+  blog: # 博客相关配置
+    pageSize: 8 # 每页显示的文章数量
+  menu: # 菜单配置
+    - id: accueil # 菜单项的唯一标识符
+      text: Accueil # 菜单项显示的文本
+      href: / # 菜单项链接的地址
+      svg: "material-symbols:home-outline-rounded"
+      target: _self
+    - id: blog
+      text: Blog
+      href: /blog
+      svg: "material-symbols:book-2-outline-rounded"
+      target: _self
+    - id: projets
+      text: Projets
+      href: /projets
+      svg: "material-symbols:code-blocks-outline"
+      target: _self
+    - id: about
+      text: À propos
+      href: /a-propos
+      svg: "material-symbols:info-outline-rounded"
+      target: _self
+
+# 用户的个人信息
+user:
+  name: Tanguy Frageul # 用户名
+  site: "https://tanguy-fgl.me" # 用户的网站链接
+  avatar: /profile.jpeg # 用户头像路径
+  sidebar: # 侧边栏配置
+    social:
+      - href: "https://paypal.me/tanguy-fgl" # 链接
+        ariaLabel: Me soutenir dans mon travail # 图标的可访问性标签
+        title: Me soutenir dans mon travail # 图标的悬浮标题
+        svg: "ri:cup-line"
+      - href: "https://github.com/tanguy-fgl"
+        ariaLabel: Github
+        title: Github
+        svg: "ri:github-line"
+      - href: "https://linkedin.com/in/tanguy-frageul/"
+        ariaLabel: LinkedIn
+        title: LinkedIn
+        svg: "ri:linkedin-line"
+  footer:
+    social:
+      - href: "https://paypal.me/tanguy-fgl" # 链接
+        ariaLabel: Me soutenir dans mon travail # 图标的可访问性标签
+        title: Me soutenir dans mon travail # 图标的悬浮标题
+        svg: "ri:cup-line"
+      - href: "https://github.com/tanguy-fgl"
+        ariaLabel: Github
+        title: Github
+        svg: "ri:github-line"
+      - href: "https://linkedin.com/in/tanguy-frageul/"
+        ariaLabel: LinkedIn
+        title: LinkedIn
+        svg: "ri:linkedin-line"
