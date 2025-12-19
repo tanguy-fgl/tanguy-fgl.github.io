@@ -1,15 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
-
 interface TimelineItem {
   year: string;
   event: string;
 }
-
 interface Props {
   items: TimelineItem[];
 }
-
 const { items } = Astro.props;
 ---
 
