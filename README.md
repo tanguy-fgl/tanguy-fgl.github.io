@@ -1,223 +1,95 @@
-<pre align="center">
-A clean, elegant, and fast static blog template! 🚀 Built with Astro
-</pre>
-
 <div align="center">
-<img alt="Frosti Logo" src="https://github.com/EveSunMaple/Frosti/blob/main/docs/logo.png" width="280px">
+
+# 🛡️ Tanguy Frageul - Portfolio & Blog
+
+### Cybersecurity Student | Pentest & CTF Enthusiast
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Astro](https://img.shields.io/badge/Astro-5.16-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![Powered by Frosti](https://img.shields.io/badge/Powered%20by-Frosti-4F46E5)](https://github.com/EveSunMaple/Frosti)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+
+[**🌐 Visit the site**](https://tanguy-fgl.me) • [**📝 Read the blog**](https://tanguy-fgl.me/blog) • [**💼 View my projects**](https://tanguy-fgl.me/projects)
+
+
 </div>
 
-[![license](https://badgen.net/github/license/EveSunMaple/Frosti)](https://github.com/EveSunMaple/Frosti/blob/main/LICENSE)&nbsp;&nbsp;&nbsp;[![release](https://badgen.net/github/release/EveSunMaple/Frosti)](https://github.com/EveSunMaple/Frosti/releases)&nbsp;&nbsp;&nbsp;[![stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/EveSunMaple/Frosti)
+---
 
-[**🖥️ Frosti Demo**](https://frosti.saroprock.com)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**🌏 Chinese README**](https://github.com/EveSunMaple/Frosti/blob/main/docs/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**❤️ My Blog**](https://www.saroprock.com)
+## 📖 About
 
-## 📷 Preview
+Welcome to my **personal blog and portfolio**! This site is dedicated to **cybersecurity**, **pentesting**, **CTF challenges**, and everything related to information security.
 
-![preview](./docs/preview-light.png)
+🎯 **Goal**: Share my knowledge, document my projects, and build a community around cybersecurity.
 
-## ✨ Features
+### ✨ Features
 
-- ✅ **Light** / **Dark** mode available
-- ✅ Super fast performance with excellent SEO
-- ✅ View transition animations (using ClientRouter)
-- ✅ Search functionality for your articles (using Pagefind)
-- ✅ Responsive design built with [Tailwind CSS](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/)
-- ✅ RSS feed support
-- 🛠️ Easy to use blog
-  - Customize your blog content in `frosti.config.yaml`
+- 🌓 **Light / Dark mode** with elegant themes
+- ⚡ **Optimal performance** and excellent SEO
+- 🔍 **Integrated search** to easily navigate through articles
+- 📱 **Responsive design** with Tailwind CSS and daisyUI
+- 🎨 **Smooth animations** with View Transitions
+- 📡 **RSS feed** to follow new articles
+- 🚀 **Continuous deployment** with GitHub Pages
 
-## ✒️ Article Information
+## 🤝 Contributing to the Blog
 
-|    Name     |       Meaning       | Required |
-| :---------: | :-----------------: | :------: |
-|    title    |    Article title    |   Yes    |
-| description | Article description |   Yes    |
-|   pubDate   |  Publication date   |   Yes    |
-|    image    | Article cover image |    No    |
-| categories  | Article categories  |    No    |
-|    tags     |    Article tags     |    No    |
-|    badge    |    Article badge    |    No    |
-|    draft    |    Draft status     |    No    |
+**This blog is open to contributions!** 🎉
 
-> [!TIP]
->
-> - You can pin your article by setting the `badge` property to `Pin`
-> - Setting `draft: true` will mark the article as a draft, and it won't appear in the article list
+Do you have cybersecurity knowledge you'd like to share? You're welcome to submit your articles!
 
-## ⬇️ Usage
+### 📝 How to Contribute?
 
-1. Install pnpm package manager (if you haven't already)
+1. **Fork** this repository
+2. Create your article in `src/content/blog/`
+3. Follow the Markdown or MDX format
+4. Ensure your content is **relevant** and **high-quality**
+5. **Respect the source code** and existing structure
+6. Submit a **Pull Request**
 
-```sh
+### ✅ Acceptance Criteria
+
+- ✨ Original and quality content
+- 🎯 Relevant to cybersecurity, development, or IT
+- 📐 Respects the format and structure of existing articles
+- 🧹 Clean and well-documented code if adding features
+- 🚫 No offensive, illegal, or malicious content
+
+> **Note**: Each contribution will be reviewed before publication to ensure consistency and quality of the blog.
+
+## 🎨 Powered by Frosti
+
+This portfolio is based on [**Frosti**](https://github.com/EveSunMaple/Frosti) created by [@EveSunMaple](https://github.com/EveSunMaple) - a modern and elegant blog template for Astro.
+
+
+## 🚀 Installation and Usage
+
+### Prerequisites
+
+- Node.js (v18 or higher, I recommend NodeJS 24 or 25)
+- pnpm (recommended)
+
+### Installation
+
+```bash
+# Install pnpm if not already done
 npm i -g pnpm
-```
 
-2. Clone the project
+# Clone the repository
+git clone https://github.com/tanguy-fgl/tanguy-fgl.github.io.git
+cd tanguy-fgl.github.io
 
-```sh
-git clone https://github.com/EveSunMaple/Frosti.git Frosti
-```
-
-3. Enter the project folder
-
-```sh
-cd Frosti
-```
-
-4. Install dependencies
-
-```sh
+# Install dependencies
 pnpm i
-```
 
-### 5. Debug and Run the Project
-
-**On first run or after updating content**, execute `search:index` to generate the search index:
-
-```sh
-# Generate the search index for development use
+# Generate search index (first run)
 pnpm run search:index
 
+# Start development server
 pnpm run dev
-```
 
-## 🔧 Configuration
+# Before commiting, format and lint with Biome
+pnpm lint && pnpm format
 
-Frosti uses `frosti.config.yaml` as its configuration file, where you can configure the website's basic information, navigation bar, footer, and more.
-
-### Website Basic Information (site)
-
-```yaml
-site:
-  tab: Frosti # Text displayed in the browser tab
-  title: Frosti # Website title
-  description: A clean, elegant, and fast static blog template! # Website description for SEO
-  language: en # Website language code, e.g., "en" for English, "zh" for Chinese
-  favicon: /favicon.ico # Website favicon path
-```
-
-### Theme Settings (theme)
-
-```yaml
-theme:
-  light: winter # Light mode theme, based on daisyUI themes
-  dark: dracula # Dark mode theme, based on daisyUI themes
-  code: github-dark # Code block theme style
-```
-
-- Themes are based on options provided by [daisyUI](https://daisyui.com/docs/themes/)
-- Code block themes use styles from [Shiki](https://shiki.style/themes)
-
-### Date Format (date_format)
-
-```yaml
-date_format: ddd MMM DD YYYY # Date display format
-```
-
-### Menu Configuration (menu)
-
-```yaml
-menu:
-  - id: home # Unique identifier for the menu item
-    text: Home # Text displayed in the menu
-    href: / # Link address
-    svg: "material-symbols:home-outline-rounded" # Icon
-    target: _self # Link target
-```
-
-Each menu item includes the following properties:
-
-- `id`: Unique identifier
-- `text`: Displayed text
-- `href`: Link address
-- `svg`: Icon code using [Iconify](https://icon-sets.iconify.design/) icon set
-- `target`: Link target (`_self` for current window or `_blank` for new window)
-
-#### Sub-menu Items (subItems)
-
-You can configure sub-menu items by adding `subItems` with the same format as main menu items.
-
-### User Information (user)
-
-```yaml
-user:
-  name: EveSunMaple # Username
-  site: "https://example.com" # User website
-  avatar: /profile.png # User avatar
-```
-
-### Social Media Configuration (social)
-
-Sidebar and footer can have different social media links:
-
-```yaml
-sidebar:
-  social:
-    - href: "https://github.com/username" # Link address
-      ariaLabel: Github # Accessibility label
-      title: Github # Tooltip on hover
-      svg: "ri:github-line" # Icon code
-```
-
-### Icon Settings (icon)
-
-Frosti uses [Iconify](https://icon-sets.iconify.design/) as its icon library. You can search for icons you like on their website, then copy the icon code to the `svg` field in the configuration file.
-
-### Language Settings (language)
-
-Frosti supports multiple languages, configured through:
-
-1. Setting the default language in `frosti.config.yaml`:
-
-```yaml
-site:
-  language: en # Set to "en" for English, "zh" for Chinese
-```
-
-2. Managing all interface text translations in the `src/i18n/translations.yaml` file:
-
-```yaml
-en: # English translations
-  label:
-    noTag: No tags assigned
-    tagCard: Tags
-    # Other English labels...
-
-zh: # Chinese translations
-  label:
-    noTag: 未分配标签
-    tagCard: 标签
-    # Other Chinese labels...
-```
-
-#### Adding or Modifying Translations
-
-To add new language support or modify existing translations:
-
-1. Add a new language code and corresponding translations in the `translations.yaml` file, or modify existing translations
-2. Change `site.language` in `frosti.config.yaml` to your preferred language code
-
-## 🚀 Automatic Updates
-
-To keep your project up to date with the latest version of Frosti, you can use the provided update script.
-
-```sh
-bash frosti.update.sh
-```
-
-This script will:
-
-1.  **Clone the latest version** of the Frosti repository.
-2.  **Safely update** your project files, adding and overwriting files based on the `.updateignore` file.
-3.  **Intelligently delete** files that have been removed from the official repository, without affecting your ignored files.
-4.  **Clean up** any remaining empty folders and temporary files.
-5.  **Install or update** dependencies using `pnpm`.
-
-## 👀 Issues
-
-If you have any questions or suggestions, you can provide feedback or communicate with the developer by submitting Issues!
-
-## 🎉 Acknowledgements
-
-@[Saicaca](https://github.com/saicaca) Their inspiration was the main reason I created this theme
-
-@[WRXinYue](https://github.com/WRXinYue) They helped me a lot when I was first getting started
+# Check biome & astro
+pnpm check-all
