@@ -11,6 +11,7 @@ const {
   showCommitGraph = false,
 } = Astro.props as GitHubStatsProps;
 
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 const repoUrl = repositoryName
@@ -29,12 +30,12 @@ const repoUrl = repositoryName
       <div class="flex items-center gap-3">
         <div class="avatar">
           <div class="w-12 h-12 rounded-full ring-2 ring-primary ring-offset-base-100 ring-offset-1">
-            <img
+            <Image
               src={`https://github.com/${username}.png`}
               alt={username}
               width="48"
               height="48"
-              loading="lazy"
+              loading="eager"
               class="gh-avatar"
             />
           </div>
