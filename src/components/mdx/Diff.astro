@@ -4,17 +4,28 @@ interface Props {
   r: string; // right image
   rightAlt?: string;
   leftAlt?: string;
+  width?: number;
+  height?: number;
 }
 
-const { l, r, rightAlt = "Right image", leftAlt = "Left image" } = Astro.props;
+import { Image } from "astro:assets";
+
+const {
+  l,
+  r,
+  rightAlt = "Right image",
+  leftAlt = "Left image",
+  width = 1280,
+  height = 720,
+} = Astro.props;
 ---
 
 <div class="not-prose diff aspect-[16/9] rounded-lg overflow-hidden fade-in-up">
   <div class="diff-item-1">
-    <img alt={rightAlt} src={r} loading="lazy" />
+    <Image alt={rightAlt} src={r} width={width} height={height} loading="lazy" />
   </div>
   <div class="diff-item-2">
-    <img alt={leftAlt} src={l} loading="lazy" />
+    <Image alt={leftAlt} src={l} width={width} height={height} loading="lazy" />
   </div>
   <div class="diff-resizer"></div>
 </div>
