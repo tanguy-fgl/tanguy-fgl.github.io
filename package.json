@@ -73,7 +73,7 @@
     "@types/mdast": "^4.0.4",
     "@typescript-eslint/parser": "^8.56.1",
     "cpy-cli": "^7.0.0",
-    "daisyui": "^4.12.24",
+    "daisyui": "^5.5.19",
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",

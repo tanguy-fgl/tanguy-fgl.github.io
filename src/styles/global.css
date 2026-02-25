@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui"
 
 /* Color scheme configuration to prevent Chrome's auto dark theme */
 :root,
