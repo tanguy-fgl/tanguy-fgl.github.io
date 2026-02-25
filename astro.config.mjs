@@ -1,6 +1,5 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import playformCompress from "@playform/compress";
 import terser from "@rollup/plugin-terser";
 import expressiveCode from "astro-expressive-code";
@@ -15,6 +14,8 @@ import { CODE_THEME, USER_SITE } from "./src/config.ts";
 import updateConfig from "./src/integration/updateConfig.ts";
 
 import { remarkReadingTime } from "./src/plugins/remark-reading-time";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,9 +34,7 @@ export default defineConfig({
   }), mdx(), icon(), terser({
     compress: true,
     mangle: true,
-  }), sitemap(), tailwind({
-    configFile: "./tailwind.config.mjs",
-  }), playformCompress()],
+  }), sitemap(), playformCompress()],
   markdown: {
     remarkPlugins: [remarkMath, remarkReadingTime],
     rehypePlugins: [rehypeKatex, [
@@ -53,5 +52,7 @@ export default defineConfig({
         },
       },
     },
+
+    plugins: [tailwindcss()],
   },
 });
