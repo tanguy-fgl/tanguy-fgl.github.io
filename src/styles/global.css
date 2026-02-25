@@ -1,0 +1,385 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: winter --default, night --prefersdark;
+};
+@source inline("alert alert-info alert-success alert-warning alert-error");
+@plugin "@tailwindcss/typography";
+@plugin "@iconify/tailwind4";
+
+
+/* Color scheme configuration to prevent Chrome's auto dark theme */
+:root,
+[data-theme-type="light"] {
+  color-scheme: light dark;
+}
+
+[data-theme-type="dark"] {
+  color-scheme: dark;
+}
+
+/* Global styles */
+html {
+  @apply scroll-smooth;
+}
+
+kbd {
+  @apply kbd;
+}
+
+code {
+  font-size: 0.875em;
+}
+
+/* Le nesting parent/enfant fonctionne toujours en CSS moderne ! */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.frosti-heading {
+  @apply text-2xl leading-normal pt-0 font-bold text-base-content bg-clip-text bg-linear-to-r from-primary to-secondary duration-300 hover:text-transparent;
+}
+
+.btn-category {
+  @apply bg-primary/5 hover:bg-primary text-primary hover:text-primary-content border-none hover:scale-110;
+}
+
+.btn-tag {
+  @apply bg-secondary/5 hover:bg-secondary text-secondary hover:text-secondary-content border-none hover:scale-110;
+}
+
+.btn-copy {
+  @apply px-1 text-base-content/80;
+}
+
+/* --- Frosti Code --- */
+.frosti-code {
+  @apply relative my-6 rounded-xl border border-base-300/20 bg-transparent overflow-hidden;
+}
+
+.frosti-code-toolbar {
+  @apply sticky top-0 z-10 flex justify-between items-center px-4 py-2 bg-base-200 border-b border-base-content/20;
+}
+
+.frosti-code-toolbar-language {
+  @apply text-sm font-semibold text-base-content/80;
+}
+
+.frosti-code-content {
+  @apply overflow-x-auto p-4 bg-transparent;
+
+  pre {
+    @apply bg-transparent;
+    counter-reset: line;
+  }
+
+  .line {
+    counter-increment: line;
+
+    &::before {
+      content: counter(line);
+      @apply text-current mr-4 inline-block w-4 text-right;
+    }
+  }
+}
+
+/* ===================================================
+   Shared components and styles for blog pages
+   =================================================== */
+
+.footnotes {
+  @apply mt-12 p-6 rounded-xl bg-base-200/50 backdrop-blur-xs border border-base-content/20 shadow-xs;
+
+  li {
+    @apply text-sm text-base-content/80 relative;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-container {
+  @apply p-4 rounded-2xl bg-base-200/30 backdrop-blur-md border border-base-300/20;
+}
+
+.stats-box {
+  @apply stats shadow-sm mb-8 w-full bg-base-200/50 backdrop-blur-xs border border-base-content/20;
+
+  .stat-figure {
+    @apply text-primary;
+    svg { @apply w-8 h-8; }
+  }
+
+  .stat-value {
+    @apply text-primary;
+  }
+}
+
+.empty-state {
+  @apply flex flex-col items-center justify-center min-h-[200px] p-8 text-center text-base-content/60 bg-base-100/50 rounded-xl border border-dashed border-base-300/20;
+}
+.empty-icon { @apply w-12 h-12 opacity-60 mb-4; }
+.empty-text { @apply text-lg; }
+
+/* ===================================================
+   Categories Page Components
+   =================================================== */
+
+/* Remplacement de @extend par @apply explicite */
+.categories-container {
+  @apply p-4 rounded-2xl bg-base-200/30 backdrop-blur-md border border-base-300/20;
+}
+
+.categories-grid {
+  @apply grid gap-6;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.category-card {
+  @apply opacity-0 translate-y-5;
+  animation: fadeIn 0.8s ease-out forwards;
+  /* Remplacement de la boucle @for */
+  animation-delay: calc(0.1s + (var(--index, 0) * 0.05s));
+}
+
+.category-inner {
+  @apply rounded-2xl overflow-hidden bg-base-100 shadow-md border border-base-300/20 transition-transform duration-300 ease-in-out;
+
+  &:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  &.expanded {
+    @apply shadow-xl;
+  }
+}
+
+.category-header { @apply p-4 cursor-pointer flex justify-between items-center; }
+.category-title {
+  @apply flex items-center gap-3;
+  h2 { @apply text-lg font-semibold m-0; }
+}
+.category-icon {
+  @apply flex items-center justify-center w-10 h-10 rounded-full shrink-0;
+  svg { @apply w-5 h-5; }
+}
+.category-count { @apply inline-flex items-center justify-center min-w-6 h-6 px-2 rounded-full text-xs font-bold; }
+.category-divider { @apply h-px bg-base-300/50 mx-4; }
+.category-content {
+  @apply max-h-0 overflow-y-auto;
+  transition: max-height 0.8s;
+}
+
+.toggle-btn { @apply bg-transparent border-none cursor-pointer p-1 flex items-center justify-center text-base-content/70; }
+.toggle-icon { @apply w-6 h-6 transition-transform duration-500; }
+
+.post-list { @apply list-none p-4 m-0 bg-base-100/70; }
+.post-item {
+  @apply mb-2 truncate;
+  &:last-child { @apply mb-0; }
+}
+.post-link {
+  @apply flex justify-between items-center p-3 rounded-lg bg-base-200/50 transition-transform;
+  &:hover {
+    @apply bg-base-200 translate-x-1;
+    .post-title { @apply text-primary; }
+  }
+}
+.post-title { @apply flex-1 min-w-0 font-medium overflow-hidden text-ellipsis whitespace-nowrap text-base-content/90; }
+.post-date { @apply text-xs text-base-content/60 whitespace-nowrap py-1 px-2 rounded-full bg-base-300/30 shrink-0 ml-2; }
+
+
+/* 1. On définit la variable de couleur pour chaque classe */
+.category-p, .category-primary { --cat-color: var(--p); }
+.category-s, .category-secondary { --cat-color: var(--s); }
+.category-a, .category-accent { --cat-color: var(--a); }
+.category-in, .category-info { --cat-color: var(--in); }
+.category-su, .category-success { --cat-color: var(--su); }
+.category-wa, .category-warning { --cat-color: var(--wa); }
+.category-er, .category-error { --cat-color: var(--er); }
+
+/* 2. On applique les styles partagés via le sélecteur moderne :is() */
+:is(.category-p, .category-primary, .category-s, .category-secondary, .category-a, .category-accent, .category-in, .category-info, .category-su, .category-success, .category-wa, .category-warning, .category-er, .category-error) {
+  .category-header {
+    background: linear-gradient(120deg, oklch(var(--cat-color) / 0.1), oklch(var(--cat-color) / 0.05));
+  }
+  .category-icon {
+    background-color: oklch(var(--cat-color) / 0.15);
+    color: oklch(var(--cat-color));
+  }
+  .category-count {
+    background-color: oklch(var(--cat-color) / 0.15);
+    color: oklch(var(--cat-color));
+  }
+  &.expanded {
+    border-color: oklch(var(--cat-color) / 0.3);
+  }
+}
+
+
+/* ===================================================
+   Tags Page Components
+   =================================================== */
+
+.tags-container {
+  @apply p-4 rounded-2xl bg-base-200/30 backdrop-blur-md border border-base-300/20;
+}
+
+.tags-cloud { @apply flex flex-wrap justify-center gap-3 min-h-[200px]; }
+
+.tags-item {
+  @apply relative opacity-0 translate-y-2 inline-flex items-center gap-2 rounded-full h-auto py-0;
+  animation: fadeIn 0.8s ease-out forwards;
+  /* Remplacement de la boucle @for */
+  animation-delay: calc(0.05s + (var(--index, 0) * 0.02s));
+}
+
+.tags-content { @apply flex items-center gap-2 px-4 py-2 rounded-full bg-base-100 shadow-xs border border-transparent; }
+.tags-icon { @apply w-4 h-4 shrink-0; }
+.tags-count { @apply inline-flex items-center justify-center min-w-6 h-6 px-2 text-xs font-bold rounded-full bg-base-300/30 text-base-content/80 duration-300; }
+
+.tag-high .tags-content { @apply border-primary/20 bg-base-100 text-primary; }
+.tag-high .tags-icon { @apply text-primary; }
+
+.tag-medium-high .tags-content { @apply border-secondary/20 bg-base-100 text-secondary; }
+.tag-medium-high .tags-icon { @apply text-secondary; }
+
+.tag-medium .tags-content { @apply border-accent/20 bg-base-100 text-accent; }
+.tag-medium .tags-icon { @apply text-accent; }
+
+.tag-medium-low .tags-content { @apply border-base-content/20 bg-base-100; }
+.tag-medium-low .tags-icon { @apply text-base-content/80; }
+
+.tag-low .tags-content { @apply border-base-300/20 bg-base-100; }
+.tag-low .tags-icon { @apply text-base-content/60; }
+
+
+/* ===================================================
+   Archives Page Components
+   =================================================== */
+
+.archives-container {
+  @apply p-4 rounded-2xl bg-base-200/30 backdrop-blur-md border border-base-300/20;
+}
+
+.archives-timeline {
+  @apply relative pl-8 ml-4;
+  &::before {
+    content: "";
+    @apply absolute top-0 bottom-0 left-1 w-1 rounded-sm bg-linear-to-b from-primary to-secondary;
+  }
+}
+
+.timeline-year {
+  @apply relative mb-12;
+  &:last-child { @apply mb-0; }
+}
+
+.timeline-month {
+  @apply mb-10 relative;
+  &:last-child { @apply mb-0; }
+}
+
+.year-header { @apply relative mb-6; }
+.year-badge { @apply relative -left-12 bg-primary text-primary-content font-bold text-lg py-2 px-4 rounded-full inline-block shadow-md z-10; }
+.year-content { @apply relative; }
+
+.month-title { @apply flex items-center gap-2 text-xl font-semibold mb-5 text-secondary pb-2 border-b border-base-content/20; }
+.month-icon { @apply w-5 h-5; }
+.month-count { @apply inline-flex items-center justify-center bg-secondary text-secondary-content text-xs font-bold min-w-6 h-6 rounded-full px-2 ml-2; }
+
+.archive-posts { @apply list-none p-0 m-0 relative; }
+.archive-item {
+  @apply relative mb-4 pl-6 flex flex-col;
+  &:last-child { @apply mb-0; }
+}
+.archive-marker { @apply absolute -left-2 top-4 w-8 h-8 flex items-center justify-center bg-base-100 border-2 border-primary rounded-full z-10; }
+.archive-icon { @apply w-4 h-4 text-primary; }
+.archive-card {
+  @apply block p-5 bg-base-100 border border-base-content/20 rounded-xl shadow-xs transition-transform duration-300;
+  &:hover {
+    @apply -translate-y-1 shadow-md border-primary/50 bg-base-200;
+    .archive-title { @apply text-primary; }
+  }
+}
+.archive-date { @apply text-sm text-base-content/60 mb-1; }
+.archive-title { @apply font-semibold mt-1 text-base-content line-clamp-2; }
+.archive-description { @apply text-sm text-base-content/70 mt-2 line-clamp-2; }
+
+
+/* ===================================================
+   Responsive styles
+   =================================================== */
+@media (max-width: 768px) {
+  .blog-container { @apply p-3; }
+  .categories-grid { @apply grid-cols-1 gap-4; }
+  .category-header { @apply py-3 px-4; }
+  .category-icon {
+    @apply w-8 h-8;
+    svg { @apply w-4 h-4; }
+  }
+  .tags-cloud { @apply gap-2; }
+  .tags-content { @apply px-3 py-1.5; }
+  .archives-timeline { @apply pl-6 ml-0; }
+  .year-badge { @apply -left-10 text-base py-1.5 px-3; }
+  .archive-card { @apply p-4; }
+  .archive-marker { @apply w-7 h-7 -left-2; }
+  .archive-icon { @apply w-3.5 h-3.5; }
+}
+
+@media (max-width: 480px) {
+  .blog-container { @apply p-2; }
+  .category-title h2 { @apply text-base; }
+  .post-link { @apply py-2 px-3 flex-col items-start gap-1; }
+  .post-date { @apply self-start; }
+  .tags-item { font-size: 0.9rem !important; }
+  .tags-icon { @apply w-3.5 h-3.5; }
+  .tags-count { @apply min-w-5 h-5 text-[0.65rem]; }
+  .archives-timeline { @apply pl-5; }
+  .year-badge { @apply -left-9 text-sm py-1 px-2.5; }
+  .month-title { @apply text-lg; }
+}
+
+/* Pagefind UI customization */
+#pagefind-search {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: oklch(var(--a));
+  --pagefind-ui-text: oklch(var(--bc));
+  --pagefind-ui-background: oklch(var(--b1));
+  --pagefind-ui-border: oklch(var(--bc) / 0.2);
+  --pagefind-ui-tag: oklch(var(--b2));
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 0.5rem;
+  --pagefind-ui-image-border-radius: 0.5rem;
+  --pagefind-ui-image-box-ratio: 3/2;
+  --pagefind-ui-font: var(--font-sans, system-ui, sans-serif);
+
+  .pagefind-ui__search-input {
+    @apply input w-full;
+    border: 1px solid oklch(var(--bc) / 0.2);
+  }
+  .pagefind-ui__search-clear { @apply hidden; }
+  .pagefind-ui__result {
+    @apply p-4 border rounded-lg mb-4;
+    border: 1px solid var(--pagefind-ui-border);
+  }
+  .pagefind-ui__result-title { @apply text-lg font-bold mb-2; }
+  .pagefind-ui__result-link { @apply text-primary hover:underline; }
+  .pagefind-ui__result-excerpt { @apply text-sm text-base-content opacity-75; }
+  .pagefind-ui__result-excerpt mark { @apply bg-accent text-accent-content px-1 rounded-sm; }
+  .pagefind-ui__button { 
+    @apply btn btn-primary;
+  }
+  .pagefind-ui__message { @apply text-sm text-base-content opacity-75 my-4; }
+  .pagefind-ui__message:empty::before {
+    content: "No results found. Try a different search term.";
+    @apply block text-center py-8 text-base-content opacity-50;
+  }
+}
