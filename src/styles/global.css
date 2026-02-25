@@ -1,6 +1,11 @@
 @import 'tailwindcss';
+@plugin "daisyui" {
+  themes: winter --default, night --prefersdark;
+};
+@source inline("alert alert-info alert-success alert-warning alert-error");
+@plugin "@tailwindcss/typography";
+@plugin "@iconify/tailwind4";
 
-@plugin "daisyui";
 
 /* Color scheme configuration to prevent Chrome's auto dark theme */
 :root,
@@ -18,8 +23,7 @@ html {
 }
 
 kbd {
-  /* TEMPORAIRE : À décommenter après la migration */
-  /* @apply kbd; */
+  @apply kbd;
 }
 
 code {
@@ -106,8 +110,7 @@ code {
 }
 
 .stats-box {
-  /* TEMPORAIRE : À décommenter après la migration */
-  /* @apply stats shadow-sm mb-8 w-full bg-base-200/50 backdrop-blur-xs border border-base-content/20; */
+  @apply stats shadow-sm mb-8 w-full bg-base-200/50 backdrop-blur-xs border border-base-content/20;
 
   .stat-figure {
     @apply text-primary;
@@ -359,8 +362,7 @@ code {
   --pagefind-ui-font: var(--font-sans, system-ui, sans-serif);
 
   .pagefind-ui__search-input {
-    /* TEMPORAIRE : À décommenter après la migration */
-    /* @apply input input-bordered w-full; */
+    @apply input w-full;
     border: 1px solid oklch(var(--bc) / 0.2);
   }
   .pagefind-ui__search-clear { @apply hidden; }
@@ -373,8 +375,7 @@ code {
   .pagefind-ui__result-excerpt { @apply text-sm text-base-content opacity-75; }
   .pagefind-ui__result-excerpt mark { @apply bg-accent text-accent-content px-1 rounded-sm; }
   .pagefind-ui__button { 
-    /* TEMPORAIRE : À décommenter après la migration */
-    /* @apply btn btn-primary; */ 
+    @apply btn btn-primary;
   }
   .pagefind-ui__message { @apply text-sm text-base-content opacity-75 my-4; }
   .pagefind-ui__message:empty::before {
