@@ -64,12 +64,12 @@ const {
   <body class="flex flex-col min-h-screen" {...isIndexed ? { "data-pagefind-body": true } : {}}>
     <Navbar />
 
-    <div class="max-w-6xl mx-auto w-full flex-grow">
+    <div class="max-w-6xl mx-auto w-full grow">
       <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-4 p-4 h-full">
         <main
           class="col-span-1 md:col-span-4 lg:col-span-3 bg-transparent order-1 md:order-2 mt-16 md:mt-0 flex flex-col gap-4"
         >
-          <div class="flex-grow flex flex-col gap-4">
+          <div class="grow flex flex-col gap-4">
             <slot />
           </div>
           <Footer />
