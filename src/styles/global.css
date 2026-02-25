@@ -190,21 +190,32 @@ code {
 .post-date { @apply text-xs text-base-content/60 whitespace-nowrap py-1 px-2 rounded-full bg-base-300/30 shrink-0 ml-2; }
 
 
-/* Remplacement du @mixin complexe par des variables CSS */
-/* On attribue dynamiquement les couleurs oklch selon une variable locale --cat-color */
-.category-color-variant .category-header { background: linear-gradient(120deg, oklch(var(--cat-color) / 0.1), oklch(var(--cat-color) / 0.05)); }
-.category-color-variant .category-icon { background-color: oklch(var(--cat-color) / 0.15); color: oklch(var(--cat-color)); }
-.category-color-variant .category-count { background-color: oklch(var(--cat-color) / 0.15); color: oklch(var(--cat-color)); }
-.category-color-variant.expanded { border-color: oklch(var(--cat-color) / 0.3); }
+/* 1. On définit la variable de couleur pour chaque classe */
+.category-p, .category-primary { --cat-color: var(--p); }
+.category-s, .category-secondary { --cat-color: var(--s); }
+.category-a, .category-accent { --cat-color: var(--a); }
+.category-in, .category-info { --cat-color: var(--in); }
+.category-su, .category-success { --cat-color: var(--su); }
+.category-wa, .category-warning { --cat-color: var(--wa); }
+.category-er, .category-error { --cat-color: var(--er); }
 
-/* On applique la classe utilitaire en fonction de la couleur souhaitée */
-.category-p, .category-primary { --cat-color: var(--p); @apply category-color-variant; }
-.category-s, .category-secondary { --cat-color: var(--s); @apply category-color-variant; }
-.category-a, .category-accent { --cat-color: var(--a); @apply category-color-variant; }
-.category-in, .category-info { --cat-color: var(--in); @apply category-color-variant; }
-.category-su, .category-success { --cat-color: var(--su); @apply category-color-variant; }
-.category-wa, .category-warning { --cat-color: var(--wa); @apply category-color-variant; }
-.category-er, .category-error { --cat-color: var(--er); @apply category-color-variant; }
+/* 2. On applique les styles partagés via le sélecteur moderne :is() */
+:is(.category-p, .category-primary, .category-s, .category-secondary, .category-a, .category-accent, .category-in, .category-info, .category-su, .category-success, .category-wa, .category-warning, .category-er, .category-error) {
+  .category-header {
+    background: linear-gradient(120deg, oklch(var(--cat-color) / 0.1), oklch(var(--cat-color) / 0.05));
+  }
+  .category-icon {
+    background-color: oklch(var(--cat-color) / 0.15);
+    color: oklch(var(--cat-color));
+  }
+  .category-count {
+    background-color: oklch(var(--cat-color) / 0.15);
+    color: oklch(var(--cat-color));
+  }
+  &.expanded {
+    border-color: oklch(var(--cat-color) / 0.3);
+  }
+}
 
 
 /* ===================================================
