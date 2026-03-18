@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 /**
  * 获取所有博客文章并根据环境过滤草稿
@@ -164,7 +164,7 @@ export async function getPostsWithStats(
 ): Promise<any[]> {
   return Promise.all(
     posts.map(async (blog: CollectionEntry<"blog">) => {
-      const { remarkPluginFrontmatter } = await blog.render();
+      const { remarkPluginFrontmatter } = await render(blog);
       return {
         ...blog,
         remarkPluginFrontmatter: {
