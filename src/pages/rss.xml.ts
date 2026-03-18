@@ -33,14 +33,14 @@ export async function GET(context: any) {
       const {
         data: { title, description, pubDate },
         body,
-        slug,
+        id,
       } = blog;
 
       const content = body
         ? replacePath(await marked(body), context.site)
         : "No content available.";
 
-      const postURL = new URL(`/blog/${slug}/`, context.site);
+      const postURL = new URL(`/blog/${id}/`, context.site);
 
       return {
         title,

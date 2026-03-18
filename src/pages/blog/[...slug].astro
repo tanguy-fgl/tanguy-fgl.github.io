@@ -7,11 +7,12 @@ import { DATE_FORMAT } from "@config";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import dayjs from "@utils/dayjs";
 import MainCard from "@/components/MainCard.astro";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  return posts.map((blog: { slug: any }) => ({
-    params: { slug: blog.slug },
+  return posts.map((blog: { id: any }) => ({
+    params: { slug: blog.id },
     props: { blog },
   }));
 }
@@ -20,12 +21,12 @@ interface Props {
 }
 
 const { blog } = Astro.props;
-const { Content, remarkPluginFrontmatter, headings } = await blog.render();
+const { Content, remarkPluginFrontmatter, headings } = await render(blog);
 const displayDate = blog.data.pubDate
   ? dayjs(blog.data.pubDate).format(DATE_FORMAT)
   : "";
-const image = new URL(`/og/${blog.slug}.png`, Astro.site).toString();
-const url = new URL(`/blog/${blog.slug}`, Astro.url.origin);
+const image = new URL(`/og/${blog.id}.png`, Astro.site).toString();
+const url = new URL(`/blog/${blog.id}`, Astro.url.origin);
 ---
 
 <BaseLayout
